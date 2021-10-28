@@ -15,7 +15,7 @@
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontFamily: "";
+$fontFamily: "futurabookc";
 $fontSize: 16;
 //</Шрифт по умолчанию>==========================================================================================
 
@@ -23,9 +23,9 @@ $fontSize: 16;
 
 //<ПЕРЕМЕННЫЕ>==========================================================================================================
 $minWidth: 320px;
-$maxWidth: 1920;
-$maxWidthContainer: 1170;
-$md1: $maxWidthContainer + 12;
+$maxWidth: 1600;
+$maxWidthContainer: 1415;
+$md1: $maxWidthContainer + 15;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
@@ -60,16 +60,7 @@ body {
 ._container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
-	@media (max-width: $md1 + px) {
-		max-width: 970px;
-	}
-	@media (max-width: $md2+px) {
-		max-width: 750px;
-	}
-	@media (max-width: $md3+px) {
-		max-width: none;
-		padding: 0 10px;
-	}
+	padding: 0 15px;
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -82,7 +73,7 @@ body {
 //@import "datepicker";
 //@import "lightgallery";
 //@import "pagging";
-@import "popup";
+//@import "popup";
 @import "header";
 @import "footer";
 @import "home";
