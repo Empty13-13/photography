@@ -41,7 +41,7 @@ let path = {
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
 		html: [src_folder + "/**/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
+		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js", src_folder + "/js/calendar.js"],
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}", "!**/favicon.*"],
 		fonts: src_folder + "/fonts/*.ttf",
@@ -219,8 +219,10 @@ function cssBuild() {
 function jsBuild() {
 	let appPath = path.build.js + 'app.min.js';
 	let vendorsPath = path.build.js + 'vendors.min.js';
+	let calendarPath = path.build.js + 'calendar.min.js';
 	del(appPath);
 	del(vendorsPath);
+	del(calendarPath);
 	return src(path.src.js, {})
 		.pipe(plumber())
 		.pipe(fileinclude())
@@ -242,7 +244,7 @@ function imagesBuild() {
 		.pipe(
 			imagemin([
 				webp({
-					quality: 85
+					quality: 100
 				})
 			])
 		)
@@ -259,7 +261,7 @@ function imagesBuild() {
 				progressive: true,
 				svgoPlugins: [{ removeViewBox: false }],
 				interlaced: true,
-				optimizationLevel: 3 // 0 to 7
+				optimizationLevel: 0 // 0 to 7
 			})
 		)
 		.pipe(dest(path.build.images))
@@ -287,7 +289,7 @@ function htmlBuild() {
 						'key': '_v',
 						'value': '%DT%',
 						'cover': 1,
-						'files': ['app.min.js', 'vendors.min.js'] // Array [{String|Regex}] of explicit files to append to
+						'files': ['app.min.js', 'vendors.min.js', 'calendar.min.js'] // Array [{String|Regex}] of explicit files to append to
 					}
 				]
 			},

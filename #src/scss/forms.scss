@@ -36,14 +36,21 @@
 	// .select__item
 	&__item {
 		position: relative;
+		
+		&._focus {
+			.select__title {
+				opacity: 1;
+			}
+		}
 	}
 	// .select__title
 	&__title {
-		color: #000;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		background: #FFFFFF;
+		border: 1px solid rgba(23, 23, 25);
+		opacity: 0.35;
+		box-sizing: border-box;
+		border-radius: 22px;
 		cursor: pointer;
-		border-radius: 4px;
 		@media (max-width: $md2+px) {
 			font-size: 18px;
 		}
@@ -51,9 +58,14 @@
 	// .select__value
 	&__value {
 		display: flex;
-		font-size: 14px;
-		height: 30px;
-		padding: 0px 15px;
+		height: 50px;
+		font-family: FuturaDemiC;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 18px;
+		color: #171719;
+		padding: 16px 16px;
 		align-items: center;
 		justify-content: space-between;
 		flex-direction: row-reverse;
@@ -82,7 +94,7 @@
 	&__options {
 		color: #000;
 		position: absolute;
-		top: 29px;
+		top: 100%;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
@@ -99,8 +111,9 @@
 	// .select__option
 	&__option {
 		cursor: pointer;
-		padding: 5px 15px;
+		padding: 8px 15px;
 		margin: 0px 0px 0px 0px;
+		font-size: 15px;
 		@media (min-width: 992px) {
 			&:hover {
 				background: #d9d9d9;
@@ -116,6 +129,8 @@
 		}
 		.select__options {
 			display: block;
+			max-height: 200px;
+			overflow: auto;
 		}
 	}
 }
@@ -133,19 +148,27 @@ textarea {
 		outline: none;
 	}
 }
-.input {
-	border-radius: 0 !important;
-	width: 100%;
+input {
+	background: #FFFFFF;
+	border: 1px solid rgba(23, 23, 25);
+	box-sizing: border-box;
+	border-radius: 22px;
 	display: block;
-	padding: 0px 20px;
+	padding: 15px;
+	text-align: center;
+	color: #171719;
+	
+	opacity: 0.35;
+	
 	&._focus {
+		text-align: start;
+		opacity: 1;
 	}
 	&._error {
 	}
 }
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
 }
 //</INPUT>====================================================================================================
 
@@ -203,6 +226,99 @@ textarea.input {
 		}
 	}
 }
+
+.form-block-reservation__radio {
+	margin-bottom: 10px;
+}
+.form-block-reservation__radio input[type=radio] {
+	display: none;
+}
+.form-block-reservation__radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+.form-block-reservation__radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: url(../img/radio-1.svg) 0 0 no-repeat;
+}
+
+/* Checked */
+.form-block-reservation__radio input[type=radio]:checked + label:before {
+	background: url(../img/radio-2.svg) 0 0 no-repeat;
+}
+
+/* Hover */
+.form-block-reservation__radio label:hover:before {
+	filter: brightness(120%);
+}
+
+/* Disabled */
+.form-block-reservation__radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
+}
+
+//region radio
+.form_radio {
+	margin-right: 23px;
+}
+
+.form_radio input[type=radio] {
+	display: none;
+}
+
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: url('../img/radio-1.svg') 0 0 / contain no-repeat;
+}
+
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+	background: url('../img/radio-2.svg') 0 0 / contain no-repeat;
+}
+
+.form_radio input[type=radio]:checked + label {
+	color: black;
+}
+
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
+}
+
+/* Disabled */
+.form_radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
+}
+
+//endregion
+
 //</CHECK>====================================================================================================
 
 //<OPTIONS (opt+tab)>====================================================================================================

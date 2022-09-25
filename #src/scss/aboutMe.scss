@@ -1,0 +1,127 @@
+.aboutme {
+  padding-top: 130px;
+  @media (max-width: $md3+px) {
+    padding-top: 100px;
+  }
+  @media (max-width: $md4+px) {
+    padding-top: 90px;
+  }
+  
+  &__content {
+    position: relative;
+  }
+  
+  &__body {
+    margin-top: 105px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    
+    
+    @media (max-width: $md1+px) {
+      margin-top: 95px;
+    }
+    @media (max-width: $md2+px) {
+      margin-top: 85px;
+    }
+    @media (max-width: $md3+px) {
+      margin-top: 75px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: $md4+px) {
+      margin-top: 20px;
+    }
+  }
+  
+  &__column {
+    &:first-child {
+      flex: 0 1 40%;
+    }
+    
+    &:last-child {
+      flex: 0 1 55%;
+    }
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    
+    @media (max-width:$md2+px){
+      justify-content: flex-start;
+    }
+    
+    @media (max-width:$md3+px){
+      &:first-child{
+        flex: 1 1 100%;
+        align-items: center;
+      }
+      &:last-child{
+        flex: 1 1 100%;
+      }
+    }
+  }
+  
+  &__title {
+    font-family: FuturaBookC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 1.14;
+    letter-spacing: 0.1em;
+    color: #171719;
+    margin-bottom: 46px;
+    
+    @include adaptiv-value('font-size', 50, 29, 1);
+    
+  }
+  
+  &__text {
+    font-family: FuturaLightC;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 140.4%;
+    letter-spacing: 0.1em;
+    color: #171719;
+    @media (max-width:$md1+px){
+      font-size: 19px;
+    }
+    @media (max-width:$md2+px){
+      font-size: 18px;
+    }
+    @media (max-width:$md3+px){
+      font-size: 17px;
+    }
+    @media (max-width:$md4+px){
+      font-size: 16px;
+    }
+    
+    span {
+      color: #cf1d1d;
+    }
+    
+    &:last-child{
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.imgMe {
+  max-width: 100%;
+  
+  @media (max-width:$md2+px){
+    margin-top: 30px;
+  }
+  @media (max-width:$md3+px){
+    margin-top: 0;
+    width: auto;
+    display: flex;
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+  @media (max-width:$md4+px){
+    max-width: 100%;
+  }
+}

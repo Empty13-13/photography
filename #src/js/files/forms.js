@@ -303,6 +303,7 @@ function select_actions(original, select) {
 			if (original.hasAttribute('multiple')) {
 				type = 'multiple';
 			}
+			select_item.classList.add('_focus')
 			selectItemActions(type);
 		});
 	}

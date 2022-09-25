@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Calendar"
+})
+<body>
+<div class="wrapper">
+  @@include('_header.html',{})
+  <main class="page">
+
+    <section class="reservation">
+      <div class="reservation__container">
+        <div class="reservation__body">
+          <div class="reservation__block block-reservation">
+            <div class="block-reservation__body">
+              <div class="block-reservation__up">
+                <div class="block-reservation__title">
+                  <p id="dateReservation"><span>30</span> Января 2021</p>
+                </div>
+              </div>
+              <form action="" class="block-reservation__form form-block-reservation">
+                <div class="form-block-reservation__up">
+                  <div class="form-block-reservation__column">
+                    <input required data-value="Ваше имя" type="text" name="name" id="name">
+                    <input required data-value="Номер телефона" type="tel" name="tel" id="tel">
+                    <input required data-value="E-mail" type="email" name="email" id="email">
+                    <div>
+                      <select name="time" id="timeSelect">
+                        <option value="">Выберите свободное время</option>
+                        <option value="11">11:00-12:00</option>
+                        <option value="12">12:00-13:00</option>
+                        <option value="13">13:00-14:00</option>
+                        <option value="14">14:00-15:00</option>
+                        <option value="15">15:00-16:00</option>
+                        <option value="16">16:00-17:00</option>
+                        <option value="17">17:00-18:00</option>
+                        <option value="18">18:00-19:00</option>
+                        <option value="19">19:00-20:00</option>
+                        <option value="20">20:00-21:00</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select name="type" id="typeSelect">
+                        <option value="">Выбрать тип фотосессии</option>
+                        <option value="0">Перый тип</option>
+                        <option value="1">Второй тип</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-block-reservation__column">
+                    <div class="form-block-reservation__line">
+                      <p class="form-block-reservation__text">Фотографа довезут до места?</p>
+
+                      <div class="form-block-reservation__radios">
+                        <div class="form_radio">
+                          <input checked id="radio-1" autocomplete="off" type="radio" name="place" data-value=""
+                                 class="input sex__radio"/>
+                          <label for="radio-1">
+                            Да
+                          </label>
+                        </div>
+                        <div class="form_radio">
+                          <input id="radio-2" autocomplete="off" type="radio" name="place" data-value=""
+                                 class="input sex__radio"/>
+
+                          <label for="radio-2">
+                            Нет
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-block-reservation__line">
+                      <p class="form-block-reservation__text">Фотограф сможет использовать сделаные кадры в своем
+                                                              портфолио?</p>
+                      <div class="form-block-reservation__radios">
+                        <div class="form_radio">
+                          <input checked id="radio-3" autocomplete="off" type="radio" name="port" data-value=""
+                                 class="input sex__radio"/>
+                          <label for="radio-3">
+                            Да
+                          </label>
+                        </div>
+                        <div class="form_radio">
+                          <input id="radio-4" autocomplete="off" type="radio" name="port" data-value=""
+                                 class="input sex__radio"/>
+
+                          <label for="radio-4">
+                            Нет
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-block-reservation__line">
+                      <div class="form-block-reservation__map-body">
+                        <div class="form-block-reservation__map-title">Выбрать место:</div>
+                        <iframe class="form-block-reservation__map"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d317841.7483334943!2d-0.18874655991821396!3d51.51067209152291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1641803281362!5m2!1sru!2sru"
+                                width="425" height="241" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <!--                      <script async-->
+                        <!--                              src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">-->
+                        <!--                      </script>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-block-reservation__bottom">
+                  <textarea required name="description" id="description" class="form-block-reservation__textarea input"
+                            placeholder="Описание фотосьемки"></textarea>
+                  <button type="submit" class="form-block-reservation__btn">To Book</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  @@include('_footer.html',{})
+</div>
+@@include('_js.html',{})
+<script src="js/calendar.min.js"></script>
+</body>
+</html>
